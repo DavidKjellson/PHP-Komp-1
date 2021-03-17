@@ -1,5 +1,7 @@
 # PHP-Komp-1
 
+## Komplettering PHP - Objects och PDO
+
 Bygg en applikation som består av två webbsidor (index.php och produkt.php). 
 
 Skapa en databas med tabellen products och kolumnerna id, name och price.
@@ -10,7 +12,7 @@ Index.php ska lista alla produkter och produkt.php ska visa en speciell produkt.
 
 I produkt.php ska du använda lämpliga metoder för att använda id-värdet i länken, och utifrån det hämta information om rätt produkt. 
 
-## Krav
+### Krav
 
 Du måste skapa en egen class för produkten. 
 
