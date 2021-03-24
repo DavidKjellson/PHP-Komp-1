@@ -2,9 +2,9 @@
 
 ## Komplettering PHP - Objects och PDO
 
-- [ ] Bygg en applikation som består av två webbsidor (index.php och produkt.php). 
+- [x] Bygg en applikation som består av två webbsidor (index.php och produkt.php). 
 
-- [ ] Skapa en databas med tabellen products och kolumnerna id, name och price.
+- [x] Skapa en databas med tabellen products och kolumnerna id, name och price.
 
 - [ ] Index.php ska lista alla produkter och produkt.php ska visa en speciell produkt. Länkarna i index.php kan se ut så här:
 
