@@ -1,3 +1,5 @@
+<?php include_once 'db.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,18 @@
 </head>
 
 <body>
-  <h1 class="text-center">Produkter</h1>
+  <header>
+    <h1 class="text-center">Produkter</h1>
+  </header>
+  <main>
+    <?php
+    $object = new Db;
+    $object->connect();
+    ?>
+  </main>
+  <footer class="fixed-bottom text-center">
+    Copyright
+  </footer>
 </body>
 
 </html>

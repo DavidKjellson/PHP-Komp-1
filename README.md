@@ -16,7 +16,7 @@
 
 - [ ] Du måste skapa en egen class för produkten. 
 
-- [ ] Du måste använda PDO för att jobba mot databasen.
+- [x] Du måste använda PDO för att jobba mot databasen.
 
 - [ ] Du måste skapa objekt av din produkt-class, utifrån den data du hämtar från databasen.
 
