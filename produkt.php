@@ -15,9 +15,9 @@ class Product
   {
     ob_start();
 ?>
-    <header>
+    <!-- <header>
       <h1 class="text-center">Produkt</h1>
-    </header>
+    </header> -->
     <div class="card text-center">
       <div class="card-body">
         <h5 class="card-title">Special title treatment</h5>
