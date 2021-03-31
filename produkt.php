@@ -1,16 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produkt</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+class Product
+{
+  public $name;
+  public function __construct($name)
+  {
+    $this->name = $name;
+  }
+  public function head()
+  {
+    include 'header.php';
+  }
+  public function html()
+  {
+    ob_start();
+?>
+    <header>
+      <h1 class="text-center">Produkt</h1>
+    </header>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+<?php
+    return ob_get_clean();
+  }
+  public function foot()
+  {
+    include 'footer.php';
+  }
+}
 
-<body>
-
-</body>
-
-</html>
+$product = new Product('Product');
+echo $product->head();
+echo $product->html();
+echo $product->foot();

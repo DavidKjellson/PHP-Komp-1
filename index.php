@@ -1,28 +1,25 @@
-<?php include_once 'db.php'; ?>
+<?php
 
-<!DOCTYPE html>
-<html lang="en">
+include 'db.php';
+include 'header.php';
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produkter</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+?>
+<header>
+  <h1 class="text-center">Produkter</h1>
+</header>
+<main>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="produkt.php" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
-<body>
-  <header>
-    <h1 class="text-center">Produkter</h1>
-  </header>
-  <main>
-    <?php
-    $object = new Db;
-    $object->connect();
-    ?>
-  </main>
-  <footer class="fixed-bottom text-center">
-    Copyright
-  </footer>
-</body>
-
-</html>
+<?php
+include 'footer.php';
