@@ -2,11 +2,11 @@
 
 class Product
 {
-  public $name;
-  public function __construct($name)
-  {
-    $this->name = $name;
-  }
+  // public $name;
+  // public function __construct($name)
+  // {
+  //   $this->name = $name;
+  // }
   public function head()
   {
     include 'header.php';
