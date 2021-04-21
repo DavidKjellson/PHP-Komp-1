@@ -22,11 +22,12 @@ class Db
       $dsn = "mysql:host=$this->dbServername;dbname=$this->dbName;charset=$this->charset";
       $pdo = new PDO($dsn, $this->dbUsername, $this->dbPassword);
       $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-      return $pdo;
+      // return $pdo;
+      $this->pdo = $pdo;
     } catch (PDOException $e) {
       echo "Connection failed:" . $e->getMessage();
     }
   }
 }
 
-$connection = new Db();
+// $connection = new Db();
