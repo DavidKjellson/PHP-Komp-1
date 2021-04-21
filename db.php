@@ -8,8 +8,9 @@ class Db
   private $dbPassword;
   private $dbName;
   private $charset;
+  public $pdo;
 
-  public function connect()
+  public function __construct()
   {
     $this->dbServername = "localhost";
     $this->dbUsername = "root";
@@ -27,3 +28,5 @@ class Db
     }
   }
 }
+
+$connection = new Db();
