@@ -46,12 +46,14 @@ include 'db.php';
 class Product
 {
   public $id;
+  public $name;
   public $product;
   public $pdo;
 
-  public function __construct($id)
+  public function __construct($id, $name)
   {
     $this->id = $id;
+    $this->name = $name;
   }
 
   public function getProduct()
@@ -74,9 +76,9 @@ class Product
   }
 }
 
-$product = new Product($_GET['id']);
+$product = new Product($_GET['id'], $_GET['name']);
 
 ?>
 
-Name: <?php echo $this->getProduct()['name']; ?>
+Name: <?php echo $product->name; ?>
 Id: <?php echo $product->id; ?>
