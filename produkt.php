@@ -50,10 +50,9 @@ class Product
   public $product;
   public $pdo;
 
-  public function __construct($id, $name)
+  public function __construct($id)
   {
     $this->id = $id;
-    $this->name = $name;
   }
 
   public function getProduct()
@@ -65,7 +64,7 @@ class Product
     $pdo = $this->id;
     $stmt = $connection->pdo->prepare("SELECT $pdo FROM products");
     $stmt->execute();
-    $product = $stmt->fetchAll();
+    $product = $pdo->fetchAll();
     $this->product = $product;
     return $product;
     // $pdo = $this->id;
@@ -76,9 +75,11 @@ class Product
   }
 }
 
-$product = new Product($_GET['id'], $_GET['name']);
+$product = new Product($_GET['id']/* , $_GET['name'] */);
 
 ?>
 
-Name: <?php echo $product->name; ?>
+Name: <?php echo $this->getProduct()['name']; ?>
+<!-- Fatal error: Uncaught Error: Using $this when not in object context in C:\Users\david\php-komp-1\produkt.php:82 Stack trace: #0 {main} thrown in C:\Users\david\php-komp-1\produkt.php on line 82 -->
+<br>
 Id: <?php echo $product->id; ?>
