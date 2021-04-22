@@ -12,7 +12,7 @@ include 'header.php';
     <div class="container">
       <div class="row">
         <?php
-        $connection = new Db();
+        // $connection = new Db();
         $stmt = $connection->pdo->prepare(
           "SELECT * FROM products"
         );
@@ -28,6 +28,7 @@ include 'header.php';
                   </div>
                   <div class="text-container">
                     <h6><?php echo $product['name']; ?></h6>
+                    <!-- wordwrap(substr($product['name'];, 0, 20), 19, '...'); -->
                     <p><?php echo $product['description']; ?></p>
                     <p class="font-weight-light"><?php echo $product['price']; ?> kr</p>
                   </div>
