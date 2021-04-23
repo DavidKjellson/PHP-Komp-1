@@ -75,7 +75,7 @@ class Product
   }
 }
 
-$product = new Product($_GET['id']/* , $_GET['name'] */);
+$product = new Product($_GET['id']);
 
 ?>
 
