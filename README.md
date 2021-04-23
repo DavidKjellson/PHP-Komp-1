@@ -14,7 +14,7 @@
 
 ### Krav
 
-- [ ] Du måste skapa en egen class för produkten. 
+- [x] Du måste skapa en egen class för produkten. 
 
 - [x] Du måste använda PDO för att jobba mot databasen.
 
