@@ -3,45 +3,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-// class Product
-// {
-//   public function head()
-//   {
-//     include 'header.php';
-//   }
-//   public function html()
-//   {
-//     ob_start();
-?>
-<!-- Design from: https://codepen.io/LR96/pen/ZxQPbV -->
-<!-- <div class="mx-auto col-md-10">
-      <div class="card">
-        <div class="card-image">
-          <img class="card-img-top img-fluid" src="https://www.unitedworx.com/media/content-images/470-lettings-cyprus-long-term-rentals-web-design_full.jpg" alt="Card image cap">
-        </div>
-        <div class="card-body mx-auto">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text font-weight-light">169 kr</p>
-        </div>
-      </div>
-    </div> -->
-<?php
-//     return ob_get_clean();
-//   }
-//   public function foot()
-//   {
-//     include 'footer.php';
-//   }
-// }
-
-// $product = new Product('Product');
-// echo $product->head();
-// echo $product->html();
-// echo $product->foot();
-
 include 'db.php';
-// $connection = new Db();
 
 class Product
 {
@@ -61,24 +23,31 @@ class Product
     if (isset($product)) {
       return $product;
     }
-    $pdo = $this->id;
-    $stmt = $connection->pdo->prepare("SELECT $pdo FROM products");
-    $stmt->execute();
-    $product = $pdo->fetchAll();
+    $query = 'SELECT * FROM products WHERE id = ?';
+    $stmt = $connection->pdo->prepare($query);
+    $stmt->execute([$this->id]);
+    $product = $stmt->fetch();
     $this->product = $product;
     return $product;
-    // $pdo = $this->id;
-    // $productExecute = $pdo->execute();
-    // $productData = $productExecute->fetchAll();
-    // $product = $this->product;
-    // return $product;
   }
 }
 
 $product = new Product($_GET['id']);
 
-?>
+include 'header.php'; ?>
 
-Name: <?php echo $product->getProduct()['name']; ?>
-<br>
-Id: <?php echo $product->id; ?>
+<!-- Design from: https://codepen.io/LR96/pen/ZxQPbV -->
+<div class="mx-auto col-md-10">
+  <div class="card">
+    <div class="card-body mx-auto">
+      <h5 class="card-title"><?php echo $product->getProduct()['name'] ?></h5>
+      <p class="card-text"><?php echo $product->getProduct()['description'] ?></p>
+      <p class="card-text font-weight-light"><?php echo $product->getProduct()['price'] ?> kr</p>
+    </div>
+    <div class="card-image">
+      <img class="card-img-top img-fluid" src="<?php echo $product->getProduct()['image'] ?>" alt="Card image cap">
+    </div>
+  </div>
+</div>
+
+<?php include 'footer.php'; ?>
