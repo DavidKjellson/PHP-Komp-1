@@ -6,11 +6,11 @@
 
 - [x] Skapa en databas med tabellen products och kolumnerna id, name och price.
 
-- [ ] Index.php ska lista alla produkter och produkt.php ska visa en speciell produkt. Länkarna i index.php kan se ut så här:
+- [x] Index.php ska lista alla produkter och produkt.php ska visa en speciell produkt. Länkarna i index.php kan se ut så här:
 
 `<a href="produkt.php?id=1">Produkt alpha</a>`
 
-- [ ] I produkt.php ska du använda lämpliga metoder för att använda id-värdet i länken, och utifrån det hämta information om rätt produkt. 
+- [x] I produkt.php ska du använda lämpliga metoder för att använda id-värdet i länken, och utifrån det hämta information om rätt produkt. 
 
 ### Krav
 
