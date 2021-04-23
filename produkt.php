@@ -79,7 +79,6 @@ $product = new Product($_GET['id']);
 
 ?>
 
-Name: <?php echo $this->getProduct()['name']; ?>
-<!-- Fatal error: Uncaught Error: Using $this when not in object context in C:\Users\david\php-komp-1\produkt.php:82 Stack trace: #0 {main} thrown in C:\Users\david\php-komp-1\produkt.php on line 82 -->
+Name: <?php echo $product->getProduct()['name']; ?>
 <br>
 Id: <?php echo $product->id; ?>
