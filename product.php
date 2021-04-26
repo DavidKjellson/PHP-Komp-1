@@ -12,20 +12,21 @@ class Product
   public function __construct($id)
   {
     $this->id = $id;
-  }
-
-  public function getProduct()
-  {
     $connection = new Db();
+
     if (isset($product)) {
       return $product;
     }
+
     $query = 'SELECT * FROM products WHERE id = ?';
     $stmt = $connection->pdo->prepare($query);
     $stmt->execute([$this->id]);
     $product = $stmt->fetch();
+    $this->name = $product['name'];
+    $this->price = $product['price'];
+    $this->image = $product['image'];
+    $this->description = $product['description'];
     $this->product = $product;
-    return $product;
   }
 }
 
@@ -37,12 +38,12 @@ include 'header.php'; ?>
 <div class="mx-auto col-md-10">
   <div class="card">
     <div class="card-body mx-auto">
-      <h5 class="card-title"><?php echo $product->getProduct()['name'] ?></h5>
-      <p class="card-text"><?php echo $product->getProduct()['description'] ?></p>
-      <p class="card-text font-weight-light"><?php echo $product->getProduct()['price'] ?> kr</p>
+      <h5 class="card-title"><?php echo $product->name ?></h5>
+      <p class="card-text"><?php echo $product->description ?></p>
+      <p class="card-text font-weight-light"><?php echo $product->price ?> kr</p>
     </div>
     <div class="card-image">
-      <img class="card-img-top img-fluid" src="<?php echo $product->getProduct()['image'] ?>" alt="Card image cap">
+      <img class="card-img-top img-fluid" src="<?php echo $product->image ?>" alt="Card image cap">
     </div>
   </div>
 </div>
