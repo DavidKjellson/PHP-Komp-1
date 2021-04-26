@@ -18,7 +18,7 @@
 
 - [x] Du måste använda PDO för att jobba mot databasen.
 
-- [ ] Du måste skapa objekt av din produkt-class, utifrån den data du hämtar från databasen.
+- [x] Du måste skapa objekt av din produkt-class, utifrån den data du hämtar från databasen.
 
 Officiell dokumentation: https://www.php.net/manual/en/book.pdo.php
 
