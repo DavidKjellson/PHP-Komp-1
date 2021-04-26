@@ -1,11 +1,9 @@
 <?php
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
 
 include 'db.php';
 $connection = new Db();
 include 'header.php';
+
 ?>
 
 <main>
@@ -43,4 +41,5 @@ include 'header.php';
 </main>
 
 <?php
+
 include 'footer.php';
