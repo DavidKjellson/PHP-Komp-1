@@ -7,12 +7,12 @@ include 'db.php';
 $connection = new Db();
 include 'header.php';
 ?>
+
 <main>
   <div id="cards_landscape_wrap-2">
     <div class="container">
       <div class="row">
         <?php
-        // $connection = new Db();
         $stmt = $connection->pdo->prepare(
           "SELECT * FROM products"
         );
@@ -20,7 +20,7 @@ include 'header.php';
         $products = $stmt->fetchAll();
         foreach ($products as $product) { ?>
           <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <a href="produkt.php?id=<?php echo $product['id']; ?>">
+            <a href="product.php?id=<?php echo $product['id']; ?>">
               <div class="card-flyer">
                 <div class="text-box">
                   <div class="image-box">
@@ -41,5 +41,6 @@ include 'header.php';
     </div>
   </div>
 </main>
+
 <?php
-include 'footer.php'; ?>
+include 'footer.php';
